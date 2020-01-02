@@ -22,6 +22,9 @@ $app->group(['prefix' => 'api'], function () use ($app) {
     $app->put('biblioteca/{id}', 'App\Http\Controllers\BibliotecasController@put');
     $app->delete('biblioteca/{id}', 'App\Http\Controllers\BibliotecasController@remove');
 
+    $app->get('biblioteca/{id}/persona', 'App\Http\Controllers\PersonasController@fromBiblioteca');
+    $app->get('biblioteca/{id}/persona/{tipo}', 'App\Http\Controllers\PersonasController@fromBibliotecaTipo');
+
     $app->get('persona', 'App\Http\Controllers\PersonasController@all');
     $app->get('persona/{id}', 'App\Http\Controllers\PersonasController@get');
     $app->post('persona', 'App\Http\Controllers\PersonasController@add');
